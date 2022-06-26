@@ -1,0 +1,10 @@
+= turbo_frame_tag 'section'
+  = form_with model: [@section.portfolio, @section] do |form|
+    div 
+      = form.label :title
+      = form.text_field :title
+    div
+      = form.label :body
+      = form.text_area :body
+    div 
+      = form.submit 'edit section' 
