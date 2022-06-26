@@ -2,3 +2,6 @@
   = section.title
   br
   = section.body
+  br
+  - if current_user == section.portfolio.user 
+    = link_to 'Edit Section', edit_portfolio_section_path(section.portfolio, section)
