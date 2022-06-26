@@ -1,0 +1,12 @@
+= turbo_frame_tag 'new section'
+  = form_with model: [@section.portfolio, @section] do |form|
+    div 
+      = form.label :title
+      br
+      = form.text_field :title
+    div 
+      = form.label :body
+      br
+      = form.text_area :body
+    div 
+      = form.submit 'add a new section'
