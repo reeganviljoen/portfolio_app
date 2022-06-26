@@ -11,8 +11,23 @@ class SectionsController < ApplicationController
     redirect_to portfolio
   end
 
+  def edit 
+    @section = Section.find(params[:id])
+  end
+
+  def update
+    @section = Section.find(params[:id])
+
+    if @section.update(section_params)
+      redirect_to @section.portfolio
+    else
+      render :edit, status: :unprocessable_entity
+    end
+
+  end
+
   private
   def section_params
-    params.require(:section).permit(:portfolio_id, :title, :body)
+    params.require(:section).permit(:title, :body)
   end
 end
