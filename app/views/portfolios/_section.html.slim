@@ -1,7 +1,7 @@
 = turbo_frame_tag 'section'
-  = section.title
-  br
-  = section.body
-  br
+  div
+    = section.title
+    = raw section.content.to_s
+    
   - if current_user == section.portfolio.user 
     = link_to 'Edit Section', edit_portfolio_section_path(section.portfolio, section)
