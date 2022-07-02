@@ -1,8 +1,9 @@
-h1 #{@portfolio.title}
+div class='grid justify-items-center w-full'
+  h1 #{@portfolio.title}
 
--@portfolio.sections.each do |section|
-  = turbo_frame_tag 'section'
-    = render 'section', section:section 
+  -@portfolio.sections.each do |section|
+    = turbo_frame_tag 'section'
+      = render 'section', section:section 
 
-= turbo_frame_tag 'new section'
-  = link_to 'Add a new section', new_portfolio_section_path(@portfolio)
+  = turbo_frame_tag 'new section'
+    = link_to 'Add a new section', new_portfolio_section_path(@portfolio)
