@@ -5,8 +5,8 @@
       br
       = form.text_field :title
     div 
-      = form.label :body
+      = form.label :content
       br
-      = form.text_area :body
+      = form.rich_text_area :content
     div 
       = form.submit 'add a new section'
