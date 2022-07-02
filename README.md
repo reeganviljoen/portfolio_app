@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+for this poroject to work on mac install vips with brew like so : `brew install vips`
+# Note this document is still a working progress
+
