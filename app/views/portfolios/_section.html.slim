@@ -1,7 +1,10 @@
-= turbo_frame_tag 'section'
-  div
+= turbo_frame_tag 'section' 
+  div class='my-2'
     = section.title
     = raw section.content.to_s
     
-  - if current_user == section.portfolio.user 
-    = link_to 'Edit Section', edit_portfolio_section_path(section.portfolio, section)
+    - if current_user == section.portfolio.user 
+      div class='flex flex-col'
+        = link_to 'Edit Section', edit_portfolio_section_path(section.portfolio, section)
+        = link_to 'Destroy section', portfolio_section_path(section.portfolio, section),
+          data: { turbo_frame:'_top', turbo_method: 'delete'}
