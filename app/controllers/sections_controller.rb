@@ -26,6 +26,13 @@ class SectionsController < ApplicationController
 
   end
 
+  def destroy
+    @section = Section.find(params[:id])
+    @section.destroy
+    portfolio = Portfolio.find(params[:portfolio_id])
+    redirect_to portfolio, status: :see_other
+  end
+
   private
   def section_params
     params.require(:section).permit(:title, :content)
