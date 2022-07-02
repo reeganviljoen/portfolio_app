@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import 'actiontext.css';
 
 
 @layer components {
@@ -13,4 +13,3 @@
 }
 
 
-@import 'actiontext.css';
