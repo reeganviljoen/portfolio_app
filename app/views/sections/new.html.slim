@@ -9,4 +9,4 @@
       br
       = form.rich_text_area :content
     div 
-      = form.submit 'add a new section'
+      = form.submit 'add a new section', data: {turbo_frame: '_top'}
