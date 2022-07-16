@@ -11,7 +11,7 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio = current_user.portfolios.create!(portfolio_params)
 
-    redirect_to portfolios_path
+    redirect_to root_path
   end
 
   def show 
