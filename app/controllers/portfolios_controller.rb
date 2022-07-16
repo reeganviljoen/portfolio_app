@@ -20,6 +20,6 @@ class PortfoliosController < ApplicationController
   
   private
   def portfolio_params
-    params.require(:portfolio).permit(:title)
+    params.require(:portfolio).permit(:title, :thumbnail)
   end
 end

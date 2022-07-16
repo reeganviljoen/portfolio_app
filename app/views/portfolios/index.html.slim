@@ -1,10 +1,11 @@
 div class='grid justify-items-center w-screen'
 
-  ul
-    - @portfolios.each do |portfolio|
-      li
-        = link_to portfolio.title, portfolio
-
+  / ul
+  /   - @portfolios.each do |portfolio|
+  /     li
+  /       = link_to portfolio.title, portfolio
+  /       = image_tag portfolio.thumbnail
+  = render @portfolios 
 
   = link_to 'Make your portfolio !', new_portfolio_path 
   - if user_signed_in?

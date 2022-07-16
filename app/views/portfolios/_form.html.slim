@@ -1,6 +1,11 @@
 = form_with model: portfolio do |form|
   div 
     = form.label :title
+    br
     = form.text_field :title
+  div 
+    = form.label :tumbnail
+    br
+    = form.file_field :thumbnail, accept: 'image/png, image/gif, imeage/jpeg'
   div 
     = form.submit
