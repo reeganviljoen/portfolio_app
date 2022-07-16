@@ -1,4 +1,4 @@
 div class='border-2 rounded-md p-2 m-1 border-slate-200'
-  = link_to portfolio do
+  = link_to portfolio ,data: {turbo_action: :advance}do
     h2 #{portfolio.title}
-    = image_tag portfolio.thumbnail, class:'w-96 h-96'
+    = image_tag portfolio.thumbnail, class:'w-96'

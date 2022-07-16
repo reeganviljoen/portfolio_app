@@ -1,11 +1,14 @@
-= form_with model: portfolio do |form|
-  div 
-    = form.label :title
-    br
-    = form.text_field :title
-  div 
-    = form.label :tumbnail
-    br
-    = form.file_field :thumbnail, accept: 'image/png, image/gif, imeage/jpeg'
-  div 
-    = form.submit
+div class='modal'
+  div class='modal__inner'
+    = form_with model: portfolio, data:{turbo_frame: :content, controller: 'modal', \
+                                  action: 'turbo:submit-end->modal#close'}do |form|
+      div 
+        = form.label :title
+        br
+        = form.text_field :title
+      div 
+        = form.label :tumbnail
+        br
+        = form.file_field :thumbnail, accept: 'image/png, image/gif, imeage/jpeg'
+      div 
+        = form.submit
