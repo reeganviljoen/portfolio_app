@@ -77,3 +77,5 @@ gem "devise", "~> 4.8"
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "slim-rails", "~> 3.5"
+
+gem "aws-sdk-s3", require: false
