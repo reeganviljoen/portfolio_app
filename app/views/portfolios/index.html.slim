@@ -1,8 +1,11 @@
-= turbo_frame_tag 'content'
-  div class='grid justify-items-center w-screen'
-    = render @portfolios 
 
+div class='grid justify-items-center w-screen'
+  h1 Portfolios
+  = render @portfolios 
+  - if !user_signed_in?
+    = link_to 'sign-up', 'users/sign_up'
+    = link_to 'sign-in', 'users/sign_in'
+  - if user_signed_in?
+    = link_to "Sign Out", destroy_user_session_path, data:{turbo_method: :delete}
     = link_to new_portfolio_path , data: { turbo_frame: :modal }do
       = image_tag 'plus.svg', class:'w-6 h-6' 
-    - if user_signed_in?
-      = link_to "Sign Out", destroy_user_session_path, data:{turbo_method: :delete}

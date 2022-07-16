@@ -2,7 +2,6 @@
   div class='my-2'
     = section.title
     = section.content.to_s
-    
     - if current_user == section.portfolio.user 
       div class='flex flex-col'
         = link_to 'Edit Section', edit_portfolio_section_path(section.portfolio, section)

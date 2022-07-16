@@ -1,8 +1,9 @@
-= turbo_frame_tag 'content'
-  div class='grid justify-items-center w-full'
-    h1 #{@portfolio.title}
 
-    = render @portfolio.sections
-      - if current_user == @portfolio.user
-      = turbo_frame_tag 'new section'
-        = link_to 'Add a new section', new_portfolio_section_path(@portfolio)
+
+div class='grid justify-items-center w-full'
+  h1 #{@portfolio.title}
+
+  = render @portfolio.sections
+  - if current_user == @portfolio.user
+    = turbo_frame_tag 'new section'
+      = link_to 'Add a new section', new_portfolio_section_path(@portfolio)
